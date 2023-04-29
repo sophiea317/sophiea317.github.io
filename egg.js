@@ -147,24 +147,24 @@ Egg.prototype.addCode = Egg.prototype.AddCode;
 Egg.prototype.addHook = Egg.prototype.AddHook;
 
 // EGGSAMPLE
-// var egg = new Egg();
-// egg
-//   .AddCode("up,up,down,down,left,right,left,right,b,a", function() {
-//     alert("Konami!");
-//   }, "konami-code")
-//  .AddHook(function(){
-//     console.log("Hook called for: " + this.activeEgg.keys);
-//     console.log(this.activeEgg.metadata);
-//   }).Listen();
+ var egg = new Egg();
+ egg
+   .AddCode("up,up,down,down,left,right,left,right,b,a", function() {
+     alert("Konami!");
+   }, "konami-code")
+  .AddHook(function(){
+     console.log("Hook called for: " + this.activeEgg.keys);
+     console.log(this.activeEgg.metadata);
+   }).Listen();
 
-var egg = new Egg();
-egg
-  .addCode("up,up,down,down,left,right,left,right,b,a", function() {
-    jQuery('#egggif').fadeIn(500, function() {
-      window.setTimeout(function() { jQuery('#egggif').hide(); }, 5000);
-    });
-  })
-  .addHook(function(){
-    console.log("Hook called for: " + this.activeEgg.keys);
-    console.log(this.activeEgg.metadata);
-  }).listen();
+//var egg = new Egg();
+//egg
+// .addCode("up,up,down,down,left,right,left,right,b,a", function() {
+//   jQuery('#egggif').fadeIn(500, function() {
+//      window.setTimeout(function() { jQuery('#egggif').hide(); }, 5000);
+//    });
+//  })
+//  .addHook(function(){
+//    console.log("Hook called for: " + this.activeEgg.keys);
+//    console.log(this.activeEgg.metadata);
+//  }).listen();
