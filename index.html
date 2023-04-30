@@ -33,24 +33,6 @@
   <link rel="stylesheet" href="stylesheets/github-light.css">
   <meta name="viewport" content="width=device-width">
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/egg.js/1.0/egg.min.js""></script>
-  <script type="text/javascript">
-    var egg = new Egg();
-    egg.addCode("up,up,down,down,left,right,left,right,b,a", function() {
-      jQuery('#egggif').fadeIn(500, function() {
-        window.setTimeout(function() { jQuery('#egggif').hide(); }, 5000);
-      });
-    }, "konami-code");
-    egg.addHook(function(){
-      console.log("Hook called for: " + this.activeEgg.keys);
-      console.log(this.activeEgg.metadata);
-    });
-    egg.listen();
-  </script>
-  <style type="text/css">
-    #egggif {position: absolute; top: 33%; left: 25%; display: none; }
-  </style>
-
 </head>
 
 <!-- the main body  -->
@@ -60,7 +42,7 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q3KZZX"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <img id="egggif" src="https://media.giphy.com/media/4hnQDVKVARZ6w/giphy.gif" />
+  
   <div class="wrapper">
 
     <!-- the left column  -->
