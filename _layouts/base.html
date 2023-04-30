@@ -3,7 +3,11 @@
     
       {%- include head.html -%}
   <!-- BODY -->
-  <body>
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+
+    <!-- Header -->
+    {%- include header.html %}
+    
     <!-- Google Tag Manager (noscript) -->
     <!-- Google Tag Manager (noscript) for browsers without JavaScript enabled -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q3KZZX"
