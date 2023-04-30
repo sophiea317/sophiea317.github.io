@@ -19,17 +19,12 @@
 # in the templates via {{ site.myvariable }}.
 
 title: sophie allen
-email: sda20a@fsu.edu
+email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my personal website! This is where you can get to know me better, 
-  learn about my interests, and find out what I've been up to lately. From my portfolio, 
-  you can see my work, my skills, and my passion for creating and learning. Whether 
-  you're here to check out my latest project or just to say hello, I hope you enjoy 
-  exploring my site and learning more about me. Thank you for stopping by!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sophiea317.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: sophiea0317
-github_username:  sophie317
+github_username:  sophiea317
 
 # Build settings
 theme: minima
