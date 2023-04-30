@@ -82,18 +82,15 @@
           </p>
 
           <!-- song recommmendations submission -->
-          <form action="submit-recommendation.php" method="POST">
-            <label for="song-name">Song Name:</label>
-            <input type="text" id="song-name" name="song-name" required>
-          
-            <label for="artist-name">Artist Name:</label>
-            <input type="text" id="artist-name" name="artist-name" required>
-          
-            <label for="recommendation">Recommendation:</label>
-            <textarea id="recommendation" name="recommendation" rows="5" required></textarea>
-          
-            <button type="submit">Submit Recommendation</button>
-          </form>
+          <section>
+            <h2>song recommendations</h2>
+            <p>have a song you think i should listen to? please submit your recommendation below! :)</p>
+            <form>
+              <label for="song-recommendation">song:</label><br>
+              <input type="text" id="song-recommendation" name="song-recommendation" required><br>
+              <input type="submit" value="submit">
+            </form>
+          </section>
           
         </center>
       </header>
