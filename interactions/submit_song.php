@@ -1,9 +1,14 @@
 <?php
+// Check if form was submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-  
-  // Retrieve the submitted song recommendation
-  $song = $_POST["song"];
+  // Get form data
+  $song = $_POST['song'];
+
+  // Set up email parameters
+  $to = 'sda20a@fsu.edu';
+  $subject = 'New Song Recommendation';
+  $message = "Someone recommended the following song:\n\n$song";
 
   // Validate the input
   if(empty($song)){
@@ -14,6 +19,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     fwrite($file, $song . "\n");
     fclose($file);
   }
-}
 
+  // Send email
+  if (mail($to, $subject, $message)) {
+    echo '<p>Thank you for your song recommendation!</p>';
+  } else {
+    echo '<p>Sorry, there was an error submitting your recommendation. Please try again later.</p>';
+  }
+
+}
 ?>
+
