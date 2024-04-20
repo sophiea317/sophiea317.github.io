@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Custom CSS -->
+  <!-- Link to custom CSS stylesheets -->
+  <link rel="stylesheet" href="style.css">
+ 
+  <!-- Page Title -->
+  <title>about me | sophie allen</title>
+  
+  <!-- Favicon -->
+  <!-- Favicon links for the tab icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/png/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/png/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/png/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="assets/png/favicon_io/site.webmanifest">
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) for browsers without JavaScript enabled -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q3KZZX"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- New centered section -->
+  <section class="another-centered-section">
+    <center>
+      <div class="center">
+        <!-- Wrap the word class in an anchor tag -->
+        <a href="index.html" class="word">
+          <span>s</span>
+          <span>o</span>
+          <span>p</span>
+          <span>h</span>
+          <span>i</span>
+          <span>e</span>
+          <span>   </span>
+          <span>a</span>
+          <span>l</span>
+          <span>l</span>
+          <span>e</span>
+          <span>n</span>
+        </a>
+      </div>
+      <br>
+      <!-- Navigation Section -->
+      <nav class="main-navigation">
+        <a href="index.html">home</a>
+        <a href="about-me.html" class="active">about me</a>
+        <a href="research.html">research</a>
+        <!-- Uncomment the line below if you have a "just fun" page -->
+        <!-- <a href="fun.html">just fun</a> -->
+      </nav>
+    </center>
+  </section>
+
+  <div class="wrapper">
+    <!-- LEFT COLUMN -->
+    <header>
+      <center>
+        <!-- profile picture -->
+        <p style="width: 195px;"><img src="assets/png/prof_pics/profpic2.jpg"></p>
+
+        <!-- social media and CV links -->
+        <p class="view">
+          <a href="mailto:sda20a@fsu.edu" target="_blank" rel="noopener noreferrer">
+            <img src="assets/png/logos/email.png" alt="email" width=35px></a>
+          <a href="https://twitter.com/sophiea0317" target="_blank" rel="noopener noreferrer">
+            <img src="assets/png/logos/twitter.png" alt="twitter" width=35px></a>
+          <a href="assets/pdf/SAllen_CV.pdf" target="_blank" rel="noopener noreferrer">
+            <img src="assets/png/logos/cv.png" alt="cv" width=35px></a>
+        </p>
+        <br><br>
+
+      </center>
+    </header>
+    <!-- end of left column -->
+
+    <!-- RIGHT COLUMN -->
+    <section class="right-text">
+      <!-- introduction -->
+      <p>hi there! i am a senior at florida state university majoring in psychology and biomathematics. my research
+        interest centers on understanding the dynamic interplay between our past experiences, current perceptions, and
+        future thinking. i am particularly interested in exploring the mechanisms through which our current experiences
+        become integrated with our past and how our past experiences influence the encoding of new memories and shape
+        the way we perceive and think about the future. i hope to pursue a Ph.D. in cognitive neuroscience to study
+        these topics further by integrating computational modeling and empirical methods (fMRI, EEG, behavioral
+        studies).</p>
+      <br>
+      <!-- current research -->
+      <p>currently, i am an undergraduate research assistant in the <a href="https://martinmemorylab.com/research"
+          target="_blank" rel="noopener noreferrer">martin memory lab</a> where i am studying how we selectively
+        retrieve semantic and episodic information using fMRI.</p>
+      <br>
+    </section>
+  </div>
+
+  <!-- Load jQuery asynchronously at the end of the body -->
+  <script>
+    function loadScript(src, callback) {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = src;
+      script.onload = callback;
+      document.body.appendChild(script);
+    }
+
+    loadScript('https://code.jquery.com/jquery-3.3.1.js', function () {
+      // Ensure jQuery is defined before using it
+      if (window.jQuery) {
+        $(function () {
+          $("#header").load("header.html");
+          // $("#footer").load("footer.html");
+        });
+      } else {
+        console.error('jQuery failed to load');
+      }
+    });
+  </script>
+</body>
+
+</html>
