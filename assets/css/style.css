@@ -523,12 +523,12 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .two-column-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     width: 90%; /* Increase width for smaller screens */
   }
 
-  .left-column, 
-  .right-column {
+  .right-column,
+  .left-column {
     flex: none; /* Remove flex distribution */
     width: 100%; /* Make both columns full width */
   }
