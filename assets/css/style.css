@@ -179,6 +179,11 @@ section {
   float: right;
 }
 
+.justify-text {
+  float: right;
+  text-align: justify;
+}
+
 .another-centered-section {
   text-align: center;
   padding: 20px; /* Adjust the padding as needed */
@@ -259,6 +264,16 @@ body {
   margin-top: 0px;
   max-width: 600px; /* Set the maximum width for the three columns within the container */
   box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .picture {
+    height: auto;
+  }
+
+  .description {
+    font-size: 4pt;
+  }
 }
 
 .column {
@@ -500,8 +515,6 @@ body {
   width: 100%;
 }
 
-  
-
 /* Tabs Styles */
 ul.tab {
   list-style-type: none;
@@ -521,21 +534,30 @@ ul.tab li a {
   text-decoration: none;
   transition: 0.3s;
   font-size: 17px;
+  background-color: transparent; /* Ensures inactive tabs are transparent */
 }
 
-/* Apply border styles for the active tab */
-ul.tab li a.active {
-  background-color: #f3f3f3; /* Add your desired background color */
+/* Apply background color for the active tab */
+ul.tab li a.active,
+ul.tab li a[data-default="true"] {
+  background-color: #f3f3f3;
 }
 
+/* Apply background color on hover */
 ul.tab li a:hover {
-  background-color: #f3f3f3; /* Add your desired background color */
-  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* subtle box shadow */
+  background-color: #f3f3f3;
 }
 
+/* Hide all tab content by default */
 .tabcontent {
   display: none;
 }
+
+/* Show the default open tab content */
+.tabcontent.default-active {
+  display: block;
+}
+
 
 
 
