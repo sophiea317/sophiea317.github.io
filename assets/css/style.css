@@ -221,6 +221,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
 }
 
 .picture {
@@ -258,22 +260,25 @@ body {
   opacity: 1;
 }
 
+@media (max-width: 768px) {
+  /*body {
+    flex-direction: column;
+  }
+  .picture img {
+    width: 100%;
+    height: 70%;
+  } */
+  .description {
+    font-size: 4pt;
+  }
+}
+
 .three-columns {
   display: flex;
   justify-content: space-between;
   margin-top: 0px;
   max-width: 600px; /* Set the maximum width for the three columns within the container */
   box-sizing: border-box;
-}
-
-@media (max-width: 480px) {
-  .picture {
-    height: auto;
-  }
-
-  .description {
-    font-size: 4pt;
-  }
 }
 
 .column {
@@ -498,6 +503,7 @@ body {
   display: flex;
   width: 60%; /* Adjust the width as needed */
   margin: 0 auto; /* Center the columns */
+  gap: 10px; /* Add spacing between columns */
 }
 
 .left-column {
@@ -514,7 +520,19 @@ body {
 .right-column .research-section {
   width: 100%;
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+  .two-column-container {
+    flex-direction: column;
+    width: 90%; /* Increase width for smaller screens */
+  }
 
+  .left-column, 
+  .right-column {
+    flex: none; /* Remove flex distribution */
+    width: 100%; /* Make both columns full width */
+  }
+}
 /* Tabs Styles */
 ul.tab {
   list-style-type: none;
