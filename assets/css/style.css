@@ -182,6 +182,8 @@ section {
 .justify-text {
   float: right;
   text-align: justify;
+  width: 700px;
+  font-size: 18px;
 }
 
 .another-centered-section {
