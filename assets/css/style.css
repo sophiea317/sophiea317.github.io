@@ -179,10 +179,17 @@ section {
   float: right;
 }
 
+
 .justify-text {
   float: right;
   text-align: justify;
   width: 700px;
+}
+/* make responsive to smaller screens */
+@media (max-width: 768px) {
+  .justify-text {
+    width: 100%;
+  }
 }
 
 .another-centered-section {
