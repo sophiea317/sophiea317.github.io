@@ -874,7 +874,7 @@ ul.tab li a:hover {
   }
   
   /* Medium screens optimization */
-  @media (min-width: 768px) and (max-width: 959px) {
+  @media (min-width: 600px) and (max-width: 1499px) {
     .three-columns {
       max-width: 100%;
       justify-content: center;
@@ -887,7 +887,8 @@ ul.tab li a:hover {
     }
     
     .two-column-container {
-      max-width: 90%;
+      max-width: 70%;
+      gap: 20px;
     }
     
     .left-column {
@@ -901,7 +902,7 @@ ul.tab li a:hover {
   }
   
   /* Large screens optimization */
-  @media (min-width: 1200px) {
+  @media (min-width: 1500px) {
     .wrapper {
       max-width: 1000px;
     }
@@ -919,7 +920,7 @@ ul.tab li a:hover {
     }
     
     .two-column-container {
-      max-width: 70%;
+      max-width: 1000px;
     }
   }
   
