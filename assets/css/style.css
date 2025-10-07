@@ -1,9 +1,10 @@
 body {
   background-color: #fff;
-  padding: 50px;
+  padding: 2rem;
   font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #595959;
   font-weight: 400;
+  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,8 +56,11 @@ a:hover small {
 }
 
 .wrapper {
-  width: 860px;
+  max-width: 860px;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 blockquote {
@@ -109,6 +113,16 @@ header {
   float: left;
   position: fixed;
   -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Mobile-first responsive header */
+@media (max-width: 768px) {
+  header {
+    width: 100%;
+    position: static;
+    float: none;
+    margin-bottom: 2rem;
+  }
 }
 
 header ul {
@@ -170,9 +184,17 @@ header ul a strong {
   color: #222;
 }
 
-section {
+/* section {
   width: 600px;
   padding-bottom: 50px;
+} */
+
+/* Responsive section */
+@media (max-width: 768px) {
+  section {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .right-text {
@@ -181,14 +203,37 @@ section {
 
 
 .justify-text {
-  float: right;
   text-align: justify;
-  width: 700px;
+  width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.6;
 }
+
 /* make responsive to smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .justify-text {
     width: 100%;
+    max-width: 100%;
+    float: none;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .justify-text {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .justify-text {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 0 0.5rem;
   }
 }
 
@@ -220,8 +265,11 @@ hr {
 }
 
 .container {
-  width: 600px; /* Set your desired maximum width */
-  margin: 0 auto; /* Center the container */
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 body {
@@ -269,29 +317,57 @@ body {
 }
 
 @media (max-width: 768px) {
-  /*body {
+  body {
+    padding: 1rem;
     flex-direction: column;
   }
+  
+  .picture {
+    height: 150px;
+    margin: 3px;
+  }
+  
   .picture img {
     width: 100%;
-    height: 70%;
-  } */
+    height: 100%;
+  }
+  
   .description {
-    font-size: 4pt;
+    font-size: 8pt;
+    padding: 5px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  .main-navigation {
+    margin: 1rem 0;
+  }
+  
+  .main-navigation a {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
   }
 }
 
 .three-columns {
   display: flex;
   justify-content: space-between;
-  margin-top: 0px;
+  margin: 0 auto;
   max-width: 600px; /* Set the maximum width for the three columns within the container */
   box-sizing: border-box;
+  width: 100%;
 }
 
 .column {
   flex-basis: 30%; /* Adjust the width of each column as needed */
   box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .item i {
@@ -320,7 +396,7 @@ body {
   display: inline-block;
   font-family: 'Helvetica';
   font-weight: 900;
-  font-size: 32pt;
+  font-size: clamp(24pt, 5vw, 32pt);
   color: #33658A;
 }
 
@@ -420,75 +496,143 @@ body {
 
     .three-columns {
       flex-wrap: wrap; /* Allow columns to wrap to the next line */
+      justify-content: center;
+      max-width: 100%;
     }
   
     .column {
       flex-basis: 100%; /* Each column takes up the full width */
       margin-bottom: 20px; /* Add some spacing between columns */
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     div.wrapper {
-      width:auto;
-      margin:0;
+      width: auto;
+      margin: 0;
+      padding: 0 1rem;
     }
   
     header, section, footer {
-      float:none;
-      position:static;
-      width:auto;
+      float: none;
+      position: static;
+      width: auto;
     }
   
     header {
-      padding-right:320px;
+      padding-right: 0;
+      width: 100%;
+      margin-bottom: 1rem;
     }
   
     section {
-      border:1px solid #e5e5e5;
-      border-width:1px 0;
-      padding:20px 0;
-      margin:0 0 20px;
+      border: 1px solid #e5e5e5;
+      border-width: 1px 0;
+      padding: 20px 0;
+      margin: 0 0 20px;
+      width: 100%;
     }
   
     header a small {
-      display:inline;
+      display: inline;
     }
   
     header ul {
-      position:absolute;
-      right:50px;
-      top:52px;
+      position: static;
+      width: 100%;
+      margin: 1rem 0;
     }
   }
   
   @media print, screen and (max-width: 720px) {
     body {
-      word-wrap:break-word;
+      word-wrap: break-word;
+      padding: 1rem;
     }
   
     header {
-      padding:0;
+      padding: 0;
     }
   
     header ul, header p.view {
-      position:static;
+      position: static;
+      width: 100%;
     }
   
     pre, code {
-      word-wrap:normal;
+      word-wrap: normal;
+      overflow-x: auto;
+    }
+    
+    .another-centered-section {
+      margin-top: 0;
+      padding: 1rem;
     }
   }
   
   @media print, screen and (max-width: 480px) {
     body {
-      padding:15px;
+      padding: 0.5rem;
     }
   
     header ul {
-      width:99%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
     }
   
     header li, header ul li + li + li {
-      width:33%;
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    header li:last-child {
+      border-bottom: none;
+    }
+    
+    header li a {
+      border-radius: 0;
+      padding: 12px 6px;
+    }
+    
+    .three-columns {
+      max-width: 100%;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    
+    .column {
+      margin: 0 auto 15px auto;
+      max-width: 300px;
+    }
+    
+    .two-column-container {
+      width: 100%;
+      gap: 0;
+      margin: 0 auto;
+      padding: 0 0.5rem;
+      flex-direction: column-reverse; /* Text first, then image */
+    }
+    
+    .left-column {
+      padding: 15px;
+      margin: 15px auto 0 auto; /* Image at bottom with top margin */
+      text-align: center;
+      width: 100%;
+      max-width: 350px;
+      flex: none;
+    }
+    
+    .right-column {
+      padding: 15px;
+      margin: 0 auto 15px auto; /* Text at top with bottom margin */
+      text-align: left;
+      width: 100%;
+      max-width: 100%;
+      flex: none;
     }
   }
   
@@ -501,44 +645,105 @@ body {
   }
   
   .research-section {
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     margin: 0 auto;
+    /* padding: 0 1rem; */
+    box-sizing: border-box;
   }
   
 
   /*two-column layout */
 .two-column-container {
   display: flex;
-  width: 60%; /* Adjust the width as needed */
+  max-width: 50%; /* Adjust the width as needed */
+  /* width: 100%; */
   margin: 0 auto; /* Center the columns */
   gap: 10px; /* Add spacing between columns */
+  box-sizing: border-box;
 }
 
 .left-column {
-  flex: 1;
+  flex: 0 0 300px; /* Fixed width for consistent image size */
   padding: 20px;
   background-color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .right-column {
-  flex: 2;
-  padding: 10px;
+  flex: 1;
+  /* padding: 20px; */
+  min-width: 0; /* Allows flex item to shrink below content size */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .right-column .research-section {
   width: 100%;
 }
+
+/* Profile image and social links styling */
+.profile-image {
+  max-width: 100%;
+  width: 275px;
+  margin-bottom: 1rem;
+}
+
+.profile-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 0px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  margin: 0 5px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-2px);
+}
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .two-column-container {
-    flex-direction: column-reverse;
-    width: 90%; /* Increase width for smaller screens */
+    flex-direction: column-reverse; /* Reverse order: right column (text) first, then left column (image) */
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
 
-  .right-column,
   .left-column {
-    flex: none; /* Remove flex distribution */
-    width: 100%; /* Make both columns full width */
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  
+  .right-column {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 20px auto;
+    text-align: left;
+    padding: 15px;
+    box-sizing: border-box;
   }
 }
 /* Tabs Styles */
@@ -615,6 +820,106 @@ ul.tab li a:hover {
     }
     100% {
       transform: translateX(0) translateY(0);
+    }
+  }
+
+  /* Additional mobile responsiveness improvements */
+  @media (max-width: 600px) {
+    .word>span:nth-child(6) {
+      margin-right: 5px;
+    }
+    
+    ul.tab li a {
+      padding: 10px 12px;
+      font-size: 15px;
+    }
+    
+    .tabcontent {
+      padding: 1rem;
+    }
+    
+    .three-columns {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .column {
+      flex-basis: auto;
+      width: 90%;
+      max-width: 280px;
+      margin: 10px auto;
+    }
+    
+    .two-column-container {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+  }
+  
+  /* Extra small screens */
+  @media (max-width: 320px) {
+    body {
+      padding: 0.25rem;
+    }
+    
+    .word>* {
+      font-size: 18pt;
+    }
+    
+    .main-navigation a {
+      font-size: 14px;
+      margin: 8px 0;
+    }
+  }
+  
+  /* Medium screens optimization */
+  @media (min-width: 768px) and (max-width: 959px) {
+    .three-columns {
+      max-width: 100%;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .column {
+      flex-basis: 45%;
+      max-width: 250px;
+    }
+    
+    .two-column-container {
+      max-width: 90%;
+    }
+    
+    .left-column {
+      flex: 0 0 280px;
+      max-width: 300px;
+    }
+    
+    .right-column {
+      padding: 20px 15px;
+    }
+  }
+  
+  /* Large screens optimization */
+  @media (min-width: 1200px) {
+    .wrapper {
+      max-width: 1000px;
+    }
+    
+    section {
+      width: 700px;
+    }
+    
+    .justify-text {
+      width: 100%;
+    }
+    
+    .three-columns {
+      max-width: 700px;
+    }
+    
+    .two-column-container {
+      max-width: 70%;
     }
   }
   
